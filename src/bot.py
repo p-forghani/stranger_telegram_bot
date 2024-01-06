@@ -15,29 +15,24 @@ class Bot:
     """
     def __init__(self):
         self.bot = telebot.TeleBot(os.environ['STRANGER_BOT_TOKEN'])
-        self.echo_all = self.bot.message_handler(
-            func=lambda msg: True
-        )(self.echo_all)
-
-    def run(self):
-        """Runs the bot
-        """
+        self.handlers()
         logger.info("Bot starting...")
         self.bot.infinity_polling()
 
-    def echo_all(self, message):
-        """Send the user the message that recieve
+    def handlers(self):
+        @self.bot.message_handler(func=lambda _: True)
+        def echo_all(message):
+            """Send the user the message that recieve
 
-        Args:
-            message (_type_): the message that user sends the bot
-        """
-        write_json(message.json, 'message.json')
-        self.bot.send_message(
-            message.chat.id,
-            message.text,
-            reply_markup=keyboards.main
-        )
+            Args:
+                message (_type_): the message that user sends the bot
+            """
+            write_json(message.json, 'message.json')
+            self.bot.send_message(
+                message.chat.id,
+                message.text,
+                reply_markup=keyboards.main
+            )
 
 if __name__ == "__main__":
     bot = Bot()
-    bot.run()

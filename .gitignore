@@ -161,5 +161,4 @@ cython_debug/
 
 # Custom ignores
 echo_bot.py
-API_TOKEN.py
 src/data
