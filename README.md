@@ -14,5 +14,5 @@ export STRANGER_BOT_TOKEN=[your token]
 ```
 3. Run the following:
 ```
-python src/bot.py
+python src/run.py
 ```
