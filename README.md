@@ -25,5 +25,5 @@ $env:STRANGER_BOT_TOKEN = 'Token'
 ```
 3. Run the following:
 ```
-python src/bot.py
+python src/run.py
 ```

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import telebot
 from loguru import logger
 from src.bot import BOT
@@ -147,3 +148,12 @@ class Bot:
 if __name__ == '__main__':
     stranger_bot = Bot(BOT, db)
     stranger_bot.run()
+=======
+import os
+
+from bot import Bot
+
+if __name__ == "__main__":
+    token = os.environ['STRANGER_BOT_TOKEN']
+    stranger_bot = Bot(bot_token=token)
+>>>>>>> d7c565a81d20dd1a90d081523b8e0da2e9714b5d
