@@ -1,6 +1,6 @@
-# Template Telegram Bot
+# Stranger Bot
 
-Template to create telegram bots.
+A telegram bot to connects 2 strangers to chat.
 
 
 ## How to Run:
